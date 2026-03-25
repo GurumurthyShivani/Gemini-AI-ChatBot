@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import axios from 'axios'
 import ReactMarkdown from "react-markdown";
-import Loading from './loading'
+import Loading from './Loading'
 
 function App() {
   let [loadingStatus, setLoadingStatus] = useState(false)
