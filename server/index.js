@@ -7,7 +7,7 @@ App.use(cors()) //Middlware
 App.use(express.json())
 
 
-let genAI = new GoogleGenerativeAI(process.env.KEY)
+let genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY)
 let model = genAI.getGenerativeModel({model:"gemini-2.5-flash"})
 
 App.post('/ask' , 
