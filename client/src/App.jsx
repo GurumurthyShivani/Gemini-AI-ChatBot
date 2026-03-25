@@ -13,7 +13,7 @@ function App() {
     e.preventDefault()     //will not refresh the page
     setLoadingStatus(true)
 
-    axios.post(`https://gemini-ai-chatbot-backend-qetz.onrender.com`, { question })
+    axios.post(`https://gemini-ai-chatbot-backend-qetz.onrender.com/ask`, { question })
       .then((res) => res.data)
       .then((finalRes) => {
         console.log(finalRes);
