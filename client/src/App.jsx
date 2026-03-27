@@ -35,25 +35,27 @@ function App() {
 
   return (
     <> 
-      <div className='sm:w-auto  mt-10 ml-50 lg:w-[800px]'>
-        <div className='h-[60px] border-1 text-white bg-cyan-700 font-bold text-3xl mb-4'><p className='mt-2'>Gemini AI ChatBot</p></div>
+      <div className='w-full max-w-[860px] mx-auto px-4 mt-6'>
+        <div className='h-[60px] border-1 text-white bg-cyan-700 font-bold text-2xl sm:text-3xl mb-4'><p className='mt-2'>Gemini AI ChatBot</p></div>
 
 
-        <div className='max-w-[1320px] border-cyan-950 border-1 mx-auto grid  grid-cols-[30%_auto] gap-5 p-5'>
+        <div className='max-w-[1320px] border-cyan-950 border-1 mx-auto grid grid-cols-1 lg:grid-cols-[60%_auto] gap-5 p-5'>
 
-          <form onSubmit={handleSubmit} action="" className='shadow-lg p-4'>
+         
 
-            <textarea placeholder='Enter your question' onChange={(e) => setQuestion(e.target.value)} className='w-[100%] h-[200px] p-3 border-1 '></textarea>
-
-            <button className='bg-cyan-700 text-white w-[100%] py-2 rounded-2xl cursor-pointer'>Generate</button>
-
-          </form>
-
-          <div className='border-l-1 border-[#ccc]'>
-            <div className='h-[300px] text-left overflow-scroll overflow-x-hidden p-3'>
+          <div className='border-1 border-[#ccc]'>
+            <div className='min-h-[200px] h-[300px] text-left overflow-scroll overflow-x-hidden p-3'>
               {loadingStatus ? <Loading /> : <ReactMarkdown>{data}</ReactMarkdown>}
             </div>
           </div>
+
+           <form onSubmit={handleSubmit} action="" className='shadow-lg p-4'>
+
+            <textarea placeholder='Enter your question' onChange={(e) => setQuestion(e.target.value)} className='w-full h-[200px] sm:h-[200px] p-3 border-1 '></textarea>
+
+            <button className='bg-cyan-700 text-white w-full py-2 rounded-2xl cursor-pointer hover:bg-cyan-800 transition'>Generate</button>
+
+          </form>
 
         </div>
       </div>
