@@ -22,6 +22,9 @@ App.post('/ask' ,
             finalData
         })
     }catch (error) {
+        console.log("ERROR STATUS:", error.status)
+        console.log("ERROR MESSAGE:", error.message)
+        console.log("FULL ERROR:", JSON.stringify(error, null, 2))
         if (error.status === 429) {
             res.status(429).send({
                 _status: false,
